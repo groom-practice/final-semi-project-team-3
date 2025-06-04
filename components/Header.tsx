@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-screen flex justify-between bg-indigo-800 px-8 py-4">
-      <nav className="flex gap-4">
+      <nav className="flex gap-5">
         <Link
           href={"/"}
           className="text-white hover:scale-105 hover:text-blue-200"
