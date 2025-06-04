@@ -25,7 +25,7 @@ export default function ToggleButton({ value, onToggle }: ToggleButtonProps) {
     <button
       onClick={toggle}
       className={`relative w-[60px] h-[32px] rounded-full transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)] overflow-hidden
-        ${enabled ? "bg-blue-500" : "bg-slate-300"}
+        ${enabled ? "bg-indigo-600" : "bg-slate-300"}
       `}
     >
       <div
