@@ -1,14 +1,16 @@
 "use client";
 
 import { fetchPosts } from "@/lib/fakePostsApi";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { useFavoriteStore } from "@/store/favoriteStore";
 
 export default function PostScrollList() {
   const router = useRouter();
   const bottomRef = useRef<HTMLDivElement | null>(null);
-  const [favorites, setFavorites] = useState<number[]>([]);
+  const favorites = useFavoriteStore((state) => state.favorites);
+  const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite);
 
   const {
     data,
@@ -43,14 +45,6 @@ export default function PostScrollList() {
 
     return () => observer.disconnect();
   }, [bottomRef, hasNextPage, fetchNextPage]);
-
-  const toggleFavorite = (postId: number) => {
-    setFavorites((prev) =>
-      prev.includes(postId)
-        ? prev.filter((id) => id !== postId)
-        : [...prev, postId]
-    );
-  };
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error: {error.message}</p>;
