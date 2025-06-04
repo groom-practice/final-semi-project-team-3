@@ -1,5 +1,6 @@
 "use client";
 
+import PostButtonList from "@/components/PostButtonList";
 import PostScrollList from "@/components/PostScrollList";
 import ToggleButton from "@/components/ToggleButton";
 import { useState } from "react";
@@ -19,5 +20,5 @@ export default function PostListPage() {
       </div>
       {isOnScrollMode ? <PostScrollList /> : <></>}
     </div>
-  )
+  );
 }

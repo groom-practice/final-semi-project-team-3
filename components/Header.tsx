@@ -24,15 +24,24 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-screen flex justify-between bg-slate-100 px-8 py-4">
-      <nav className="flex gap-4">
-        <Link href={"/"} className="hover:text-slate-500">
+    <header className="fixed top-0 left-0 w-screen flex justify-between bg-indigo-800 px-8 py-4">
+      <nav className="flex gap-5">
+        <Link
+          href={"/"}
+          className="text-white hover:scale-105 hover:text-blue-200"
+        >
           Home
         </Link>
-        <Link href={"/photos"} className="hover:text-slate-500">
+        <Link
+          href={"/photos"}
+          className="text-white hover:scale-105 hover:text-blue-200"
+        >
           Photos
         </Link>
-        <Link href={"/posts"} className="hover:text-slate-500">
+        <Link
+          href={"/posts"}
+          className="text-white hover:scale-105 hover:text-blue-200"
+        >
           Posts
         </Link>
       </nav>
@@ -40,12 +49,15 @@ export default function Header() {
         {isLoggedIn ? (
           <button
             onClick={handleLogout}
-            className="hover:text-slate-500 cursor-pointer"
+            className="text-white hover:scale-105 hover:text-blue-200 cursor-pointer"
           >
             Logout
           </button>
         ) : (
-          <Link href={"/login"} className="hover:text-slate-500">
+          <Link
+            href={"/login"}
+            className="text-white hover:scale-105 hover:text-blue-200"
+          >
             Login
           </Link>
         )}
