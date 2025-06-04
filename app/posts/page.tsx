@@ -18,7 +18,7 @@ export default function PostListPage() {
           <ToggleButton value={isOnScrollMode} onToggle={setIsOnScrollMode} />
         </div>
       </div>
-      {isOnScrollMode ? <PostScrollList /> : <></>}
+      {isOnScrollMode ? <PostScrollList /> : <PostButtonList />}
     </div>
   );
 }
