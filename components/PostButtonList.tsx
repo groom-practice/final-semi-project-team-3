@@ -30,7 +30,7 @@ export default function PostButtonList() {
     <div className="space-y-4 p-4 bg-neutral-900 rounded shadow">
       {data?.pages.flat().map(post => (
         <div key={post.id} className="p-4 bg-black rounded">
-          <Link href={`/posts/${post.id}`}>
+          <Link href={`/posts/${post.id}`} className="font-semibold text-lg cursor-pointer text-gray-400 hover:text-indigo-600 trainsition-all duration-200">
             {post.title}
           </Link>
           <p>{post.body}</p>
@@ -38,7 +38,7 @@ export default function PostButtonList() {
       ))}
 
       {hasNextPage && (
-        <button onClick={() => fetchNextPage()}>
+        <button onClick={() => fetchNextPage()} className="mt-4 px-4 py-2 bg-indigo-600 rounded hover:bg-indigo-700 disabled:cpacity-50 cursor-pointer">
           {isFetchingNextPage ? "로딩 중" : "더 보기"}
         </button>
       )}
