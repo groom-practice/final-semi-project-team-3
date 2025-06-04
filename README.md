@@ -35,6 +35,8 @@ $ npm run dev
     └── LoginError.tsx
     └── ReactQueryProvider.tsx
 └── 📁public
+    └──📂profile
+        └── 📜mandoo.png
     └── file.svg
     └── globe.svg
     └── next.svg
