@@ -1,6 +1,7 @@
 "use client";
 
 import { fetchPosts } from "@/lib/postApi";
+import { Post } from "@/types/posts";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useFavoriteStore } from "@/store/favoriteStore";
@@ -27,6 +28,10 @@ export default function PostButtonList() {
     },
   });
 
+  const handleTitleClick = (e:React.MouseEvent, post:Post) => {
+
+  }
+
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error: {error.message}</p>;
 
@@ -40,12 +45,12 @@ export default function PostButtonList() {
       {sortedPosts.map((post) => (
         <div key={post.id} className="p-4 bg-black rounded">
           <div className="flex justify-between items-center mb-2">
-            <Link
-              href={`/posts/${post.id}`}
-              className="font-semibold text-lg cursor-pointer text-gray-400 hover:text-indigo-600 transition-all duration-200"
-            >
-              {post.title}
-            </Link>
+          <p
+            className="font-semibold text-lg cursor-pointer text-gray-400 hover:text-indigo-600 trainsition-all duration-200"
+            onClick={(e) => handleTitleClick(e, post)}
+          >
+            {post.title}
+          </p>
             <button
               onClick={() => toggleFavorite(post.id)}
               className={`ml-4 px-2 py-1 text-sm rounded ${
