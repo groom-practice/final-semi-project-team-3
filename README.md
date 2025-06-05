@@ -1,13 +1,12 @@
 # Final Semi Project
 
-본격적으로 팀 프로젝트 들어가기 전 마지막으로 협업 실습 프로젝트
+팀 프로젝트 들어가기 전 마지막으로 협업 실습 프로젝트
 
 ## 프로젝트 실행 방법
 
-<code>
-$ npm install<br>
-$ npm run dev
-</code>
+`$ npm install`
+<br>
+`$ npm run dev`
 
 ## 팀원 및 역할
 
@@ -24,24 +23,44 @@ $ npm run dev
 
 ```
 └── 📁app
-    └── 📁login
-        └── page.tsx
     └── favicon.ico
     └── globals.css
     └── layout.tsx
+    └── 📁lib
+        └── fakeImageApi.tsx
+    └── 📁login
+        └── page.tsx
     └── page.tsx
+    └── 📁photos
+        └── 📁[id]
+            └── page.tsx
+    └── 📁posts
+        └── page.tsx
+    └── 📁types
+        └── photo.ts
 └── 📁components
     └── Header.tsx
     └── LoginError.tsx
+    └── PostButtonList.tsx
+    └── PostScrollList.tsx
     └── ReactQueryProvider.tsx
+    └── ToggleButton.tsx
+└── 📁lib
+    └── fakePostsApi.ts
+    └── postApi.ts
 └── 📁public
     └── file.svg
     └── globe.svg
     └── next.svg
+    └── 📁profile
+        └── mandoo.png
     └── vercel.svg
     └── window.svg
 └── 📁store
     └── authStore.ts
+└── 📁types
+    └── post.ts
+    └── posts.ts
 └── .gitignore
 └── eslint.config.mjs
 └── next-env.d.ts
@@ -56,3 +75,12 @@ $ npm run dev
 ## 상세 기능 설명
 
 ## Git branch
+
+```
+feature/login
+feature/modal
+feature/photo-modal
+feature/postbutton
+feature/postfavorite
+feature/swiper
+```
