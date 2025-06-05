@@ -1,4 +1,6 @@
-export default function PostDetail() {
+export default function PostDetail({ postId }: { postId: number }) {
+  console.log("id", postId);
+
   return (
     <div className="p-4 space-y-4 bg-white rounded shadow">
       <h1 className="text-2xl font-bold"></h1>

@@ -58,10 +58,10 @@ const profiles: Profile[] = [
   },
   {
     name: "양아름",
-    image: "/profile/mandoo.png",
+    image: "/profile/areum.jpg",
     role: "프론트엔드 개발자",
-    determination: "개인 각오 작성",
-    github: "",
+    determination: "팀플 화이팅, 취뽀 화이팅 ! 🥹",
+    github: "https://github.com/eillen-yang",
   },
 ];
 
