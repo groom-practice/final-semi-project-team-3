@@ -4,10 +4,13 @@ import { fetchPosts } from "@/lib/fakePostsApi";
 import { useRef, useEffect } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { useFavoriteStore } from "@/store/favoriteStore";
 
 export default function PostScrollList() {
   const router = useRouter();
   const bottomRef = useRef<HTMLDivElement | null>(null);
+  const favorites = useFavoriteStore((state) => state.favorites);
+  const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite);
 
   const {
     data,
@@ -46,16 +49,33 @@ export default function PostScrollList() {
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error: {error.message}</p>;
 
+  const allPosts = data?.pages.flat() ?? [];
+  const favoritePosts = allPosts.filter((post) => favorites.includes(post.id));
+  const otherPosts = allPosts.filter((post) => !favorites.includes(post.id));
+  const sortedPosts = [...favoritePosts, ...otherPosts];
+
   return (
     <div className="space-y-4 p-4 bg-neutral-900 rounded shadow">
-      {data?.pages.flat().map((post) => (
+      {sortedPosts.flat().map((post) => (
         <div key={post.id} className="p-4 bg-black rounded">
-          <button
-            className="font-semibold text-lg cursor-pointer text-gray-400 hover:text-indigo-600 trainsition-all duration-200"
-            onClick={() => router.push(`/posts/${post.id}`)}
-          >
-            {post.title}
-          </button>
+          <div className="flex justify-between items-center mb-2">
+            <button
+              className="font-semibold text-lg cursor-pointer text-gray-400 hover:text-indigo-600 trainsition-all duration-200"
+              onClick={() => router.push(`/posts/${post.id}`)}
+            >
+              {post.title}
+            </button>
+            <button
+              onClick={() => toggleFavorite(post.id)}
+              className={`ml-4 px-2 py-1 text-sm rounded ${
+                favorites.includes(post.id)
+                  ? "bg-yellow-400 text-black"
+                  : "bg-gray-700 text-white"
+              }`}
+            >
+              {favorites.includes(post.id) ? "★" : "☆"}
+            </button>
+          </div>
           <p>{post.body}</p>
         </div>
       ))}
@@ -65,5 +85,5 @@ export default function PostScrollList() {
         <p className="text-center text-gray-400">No more posts</p>
       )}
     </div>
-  )
+  );
 }
