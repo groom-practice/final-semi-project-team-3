@@ -1,3 +1,4 @@
+import PhotoDetails from "@/components/PhotoDetails";
 import { getPhoto } from "@/lib/fakeImageApi";
 import { Photo } from "@/types/photo";
 import { notFound } from "next/navigation";
@@ -14,7 +15,17 @@ const PhotoPage = async ({ params }: { params: PageParams }) => {
 
   const photo = (await response.json()) as Photo;
 
-  return <div>Loading...</div>;
+  return (
+    <div className="p-6">
+      <PhotoDetails
+        src={photo.download_url}
+        alt={photo.author}
+        photographer={{
+          name: photo.author,
+        }}
+      />
+    </div>
+  );
 };
 
 export default PhotoPage;
