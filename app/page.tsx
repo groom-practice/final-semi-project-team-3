@@ -49,10 +49,10 @@ const profiles: Profile[] = [
   },
   {
     name: "이예도",
-    image: "/profile/mandoo.png",
+    image: "/profile/yedo.jpg",
     role: "프론트엔드 개발자",
-    determination: "개인 각오 작성",
-    github: "",
+    determination: "꾸준히 발전하는 개발자가 되겠습니다.",
+    github: "https://github.com/ydsic",
   },
   {
     name: "양아름",
