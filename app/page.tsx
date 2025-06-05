@@ -29,7 +29,8 @@ const profiles: Profile[] = [
     name: "권수영",
     image: "/profile/suyeong.jpeg",
     role: "프론트엔드 개발자",
-    determination: "아직 부족한 점이 많지만, 쉽게 포기하지 않는 마음가짐을 유지할 것입니다!",
+    determination:
+      "아직 부족한 점이 많지만, 쉽게 포기하지 않는 마음가짐을 유지할 것입니다!",
     github: "https://github.com/ksy21019",
   },
   {
@@ -42,9 +43,10 @@ const profiles: Profile[] = [
   },
   {
     name: "김기현",
-    image: "/profile/mandoo.png",
+    image: "/profile/kihyun.png",
     role: "프론트엔드 개발자",
-    determination: "개인 각오 작성",
+    determination:
+      "사실 3달 지난 지금도 이러면 안될거 같은데 따라가기 벅차지만, 그래도 분위기는 올려보면서 최선을 다해 보겠습니다",
     github: "",
   },
   {
