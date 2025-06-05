@@ -3,13 +3,13 @@
 import { fetchPosts } from "@/lib/postApi";
 import { Post } from "@/types/posts";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useFavoriteStore } from "@/store/favoriteStore";
 
 export default function PostButtonList() {
+  const router = useRouter();
   const favorites = useFavoriteStore((state) => state.favorites);
   const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite);
-
   const {
     data,
     fetchNextPage,
@@ -28,8 +28,10 @@ export default function PostButtonList() {
     },
   });
 
-  const handleTitleClick = (e:React.MouseEvent, post:Post) => {
-
+  const handleTitleClick = (e: React.MouseEvent, post: Post) => {
+    const postString = JSON.stringify(post);
+    window.localStorage.setItem(String(post.id), postString);
+    router.push(`/posts/${post.id}`)
   }
 
   if (isLoading) return <p>Loading...</p>;

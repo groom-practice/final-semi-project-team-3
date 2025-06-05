@@ -1,4 +1,4 @@
-import { Post } from "@/types/post";
+import { Post } from "@/types/posts";
 import axios from "axios";
 
 export const fetchPosts = async ({ pageParam = 1 }): Promise<Post[]> => {
