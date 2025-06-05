@@ -49,6 +49,8 @@
     └── fakePostsApi.ts
     └── postApi.ts
 └── 📁public
+    └──📂profile
+        └── 📜mandoo.png
     └── file.svg
     └── globe.svg
     └── next.svg
@@ -73,6 +75,14 @@
 ```
 
 ## 상세 기능 설명
+
+/ - Swiper로 팀원 프로필 카드 정렬
+<br>
+/photos - 사진 정렬. 클릭 시 세부 정보 표시
+<br>
+/posts - 게시글 정렬 및 버튼 스크롤 or 무한 스크롤 기능 선택. 클릭 시 세부 정보 표시
+<br>
+/login - Login 완료 후 위 기능을 이용 가능.
 
 ## Git branch
 
