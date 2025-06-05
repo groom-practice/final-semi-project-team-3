@@ -20,17 +20,17 @@ type Profile = {
 const profiles: Profile[] = [
   {
     name: "신유승",
-    image: "/profile/mandoo.png",
+    image: "/profile/yuseung.png",
     role: "프론트엔드 개발자",
-    determination: "개인 각오 작성",
-    github: "",
+    determination: "심장을 바쳐라.",
+    github: "https://github.com/SinYusi",
   },
   {
     name: "권수영",
-    image: "/profile/mandoo.png",
+    image: "/profile/suyeong.jpeg",
     role: "프론트엔드 개발자",
-    determination: "개인 각오 작성",
-    github: "",
+    determination: "아직 부족한 점이 많지만, 쉽게 포기하지 않는 마음가짐을 유지할 것입니다!",
+    github: "https://github.com/ksy21019",
   },
   {
     name: "김호영",

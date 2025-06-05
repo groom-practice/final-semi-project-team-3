@@ -13,7 +13,7 @@ export default function PostListPage() {
       <div className="flex justify-between">
         <div className="flex justify-center items-center">
           <h2 className="text-2xl font-bold my-4">Posts List</h2>
-          <Link href={`/postlast`} className="ml-4 text-sm text-slate-500">마지막으로 본 게시글</Link>
+          <Link href={`/postlast`} className="ml-4 text-sm text-slate-500 hover:text-indigo-600">마지막으로 본 게시글</Link>
         </div>
         <div className="flex justify-center items-center">
           <p className="mr-2 text-sm text-slate-500">

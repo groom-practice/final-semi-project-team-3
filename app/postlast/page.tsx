@@ -1,10 +1,12 @@
 "use client";
 
 import { Post } from "@/types/posts";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function PostLast() {
   const [postData, setPostData] = useState<Post[]>([]);
+  const router = useRouter();
   // ssr 방식에서 렌더링 이전에는 window 객체가 없어 일반적인 방식으로는 불가능
   // useEffect를 사용해 렌더링 이후에 window 객체에 접근하는 방식을 사용
   useEffect(() => {
@@ -34,7 +36,10 @@ export default function PostLast() {
         {postData.length > 0 ? (
           postData.map(post => (
             <div key={post.id + post.title} className="p-4 bg-black rounded mb-4">
-              <p className="font-semibold text-lg cursor-pointer text-gray-400 hover:text-indigo-600 transition-all duration-200">
+              <p 
+              className="font-semibold text-lg cursor-pointer text-gray-400 hover:text-indigo-600 transition-all duration-200"
+              onClick={() => router.push(`/posts/${post.id}`)}
+              >
                 {post.title}
               </p>
               <p>{post.body}</p>
