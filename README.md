@@ -49,6 +49,8 @@
     └── fakePostsApi.ts
     └── postApi.ts
 └── 📁public
+    └──📂profile
+        └── 📜mandoo.png
     └── file.svg
     └── globe.svg
     └── next.svg
@@ -83,8 +85,6 @@
 /login - Login 완료 후 위 기능을 이용 가능.
 
 ## Git branch
-
-각 기능별로 브런치를 만들어서 구현
 
 ```
 feature/login
