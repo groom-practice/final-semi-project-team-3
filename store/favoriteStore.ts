@@ -8,7 +8,7 @@ type FavoriteStore = {
 
 export const useFavoriteStore = create<FavoriteStore>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       favorites: [],
       toggleFavorite: (id: number) =>
         set((state) => ({
