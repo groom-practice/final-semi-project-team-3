@@ -20,10 +20,10 @@ type Profile = {
 const profiles: Profile[] = [
   {
     name: "신유승",
-    image: "/profile/mandoo.png",
+    image: "/profile/yuseung.png",
     role: "프론트엔드 개발자",
-    determination: "개인 각오 작성",
-    github: "",
+    determination: "심장을 바쳐라.",
+    github: "https://github.com/SinYusi",
   },
   {
     name: "권수영",
